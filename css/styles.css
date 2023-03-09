@@ -4,6 +4,7 @@
   --main-btn-color: #ffffff;
   --second-btn-color: #303030;
   --accent-color: #ff6c00;
+  --gap: 30px;
 }
 
 p,
@@ -54,6 +55,8 @@ img {
 }
 
 .btn {
+  min-width: 160px;
+  height: 40px;
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
@@ -61,6 +64,9 @@ img {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   cursor: pointer;
+  border: 1px solid #ff6c00;
+  border-radius: 25px;
+  background-color: transparent;
 }
 
 .btn:is(:hover, :focus) {
@@ -88,12 +94,37 @@ img {
   letter-spacing: 0.02em;
 }
 
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 /**------------- HEADER ---------------*/
 
 .header {
   background-color: gray;
   padding-top: 32px;
   padding-bottom: 32px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  margin-right: 131px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.header-list {
+  display: flex;
+  gap: 30px;
 }
 
 .header-link {
@@ -115,6 +146,7 @@ img {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #ffffff;
+  margin-right: 43px;
 }
 
 .header-btn {
@@ -123,9 +155,19 @@ img {
 /**------------- HERO ---------------*/
 
 .hero {
+}
+
+.hero-container {
+  display: flex;
+}
+
+.hero-wrap {
   background-color: #7b7575;
+  flex-grow: 1;
+  padding: 272px 100px 208px;
 }
 .hero-list {
+  width: 100px;
 }
 .hero-item {
 }
@@ -157,28 +199,38 @@ img {
 
 .hero-bottom-text {
   color: #9da4bd;
+  max-width: 360px;
 }
 
 /**------------- ABOUT ---------------*/
 
-.about {
-  padding-top: 120px;
-  padding-bottom: 120px;
+.about-container {
+  display: flex;
+  gap: 30px;
+}
+
+.about-wrap {
+  padding-right: 100px;
 }
 .about-list {
+  display: flex;
+  gap: 30px;
 }
 
 .about-item {
 }
 .about-top-text {
   color: #303030;
+  margin-bottom: 20px;
 }
 
 .about-title {
   color: var(--second-title-color);
+  margin-bottom: 20px;
 }
 .about-bottom-text {
   color: #555555;
+  margin-bottom: 20px;
 }
 
 .about-text {
@@ -186,6 +238,7 @@ img {
   line-height: 1.86;
   letter-spacing: 0.02em;
   color: #555555;
+  margin-bottom: 42px;
 }
 
 .about-btn {
@@ -196,20 +249,36 @@ img {
 
 .prices {
   background-color: #303030;
-  padding-top: 120px;
-  padding-bottom: 120px;
 }
 .prices-top-text {
   color: rgba(157, 164, 189, 0.6);
+  margin-bottom: 20px;
 }
 .prices-title {
   color: #ffffff;
+  margin-bottom: 44px;
+}
+
+.prices-list-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 44px;
 }
 
 .prices-list {
+  border: 1px solid #ffffff;
+  width: calc((100% - 30px) / 2);
+  padding: 30px 20px;
 }
 
 .prices-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.prices-item:last-child {
+  margin-bottom: 0;
 }
 .prices-item-text {
   font-size: 18px;
@@ -219,6 +288,8 @@ img {
 }
 .prices-btn {
   color: #ffffff;
+  display: block;
+  margin: 0 auto;
 }
 
 /**------------- BENEFITS ---------------*/
@@ -261,16 +332,21 @@ img {
 
 .barbers-top-text {
   color: #303030;
+  margin-bottom: 20px;
 }
 
 .barbers-title {
   color: var(--second-btn-color);
+  margin-bottom: 44px;
 }
 
 .barbers-list {
+  display: flex;
+  gap: 30px;
 }
 
 .barbers-item {
+  width: calc((100% - 60px) / 3);
 }
 
 .barbers-item-title {
@@ -294,4 +370,17 @@ img {
 
 .gallery-top-text {
   color: #303030;
+  margin-bottom: 44px;
+}
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px 30px;
+  /* column-gap: 30px;
+  row-gap: calc(var(--gap) * 2); */
+}
+
+.gallery-item {
+  width: calc((100% - 90px) / 4);
 }
