@@ -5,6 +5,7 @@
   --second-btn-color: #303030;
   --accent-color: #ff6c00;
   --gap: 30px;
+  --grad: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2));
 }
 
 p,
@@ -163,6 +164,10 @@ img {
 
 .hero-wrap {
   background-color: #7b7575;
+  background-image: var(--grad), url(../images/hero-bg.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   flex-grow: 1;
   padding: 272px 100px 208px;
 }
@@ -328,6 +333,7 @@ img {
 /**------------- BENEFITS ---------------*/
 
 .barbers {
+  box-shadow: 0 -15px 10px 0 teal;
 }
 
 .barbers-top-text {
@@ -364,7 +370,42 @@ img {
   text-align: center;
   letter-spacing: 0.02em;
   color: #ff6c00;
+  margin-bottom: 30px;
 }
+
+.barbers-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.barbers-soc-item {
+  width: 44px;
+  height: 44px;
+}
+.barbers-soc-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: tomato;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #ffffff;
+}
+
+.barbers-soc-link:hover {
+  background-color: teal;
+  fill: violet;
+}
+
+/* .barbers-soc-link:hover {
+  background-color: teal;
+}
+
+.barbers-soc-link:hover .barbers-soc-icon {
+  fill: violet;
+} */
 
 /**------------- GALLERY ---------------*/
 
