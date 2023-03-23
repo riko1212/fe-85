@@ -39,6 +39,18 @@ img {
   display: block;
 }
 
+@keyframes appear {
+  0% {
+    transform: translate(-2000px);
+    /* opacity: 0; */
+  }
+
+  100% {
+    /* opacity: 1; */
+    transform: translate(0px);
+  }
+}
+
 .link {
   text-decoration: none;
 }
@@ -52,7 +64,6 @@ img {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  outline: 2px solid red;
 }
 
 .btn {
@@ -116,7 +127,8 @@ img {
 /**------------- HEADER ---------------*/
 
 .header {
-  background-color: gray;
+  position: absolute;
+  width: 100%;
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -147,6 +159,7 @@ img {
   line-height: 1.33;
   letter-spacing: 0.1em;
   color: #ffffff;
+  transition: color 300ms linear;
 }
 
 .header-link:is(:hover, :focus) {
@@ -184,8 +197,27 @@ img {
   flex-grow: 1;
   padding: 272px 100px 208px;
 }
-.hero-list {
+
+.hero-soc {
   width: 100px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 27px;
+  padding-bottom: 40px;
+}
+.hero-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: bottom left;
+}
+
+.hero-list::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: #303030;
 }
 .hero-item {
 }
@@ -461,6 +493,29 @@ img {
   width: calc((100% - 60px) / 3);
 }
 
+.barbers-item:hover .barbers-cover-text {
+  transform: translateY(0);
+}
+
+.barbers-top-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.barbers-cover-text {
+  position: absolute;
+  top: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: rgb(255, 108, 0);
+  padding: 40px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 300ms linear;
+}
+
 .barbers-item-title {
   font-weight: 400;
   font-size: 18px;
@@ -530,4 +585,45 @@ img {
 
 .gallery-item {
   width: calc((100% - 90px) / 4);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(48, 48, 48, 0.445);
+  transition: opacity 300ms linear, visibility 300ms linear;
+}
+
+.modal {
+  width: 500px;
+  min-height: 500px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(1);
+  transition: transform 300ms linear;
+  padding: 30px;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scaleY(2);
+}
+
+.modal-close {
+  display: block;
+  margin-left: auto;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
