@@ -595,7 +595,8 @@ img {
   /* transform: translate(-50%, -50%) scaleY(1); */
   /* transition: transform 300ms linear; */
   padding: 30px;
-  transform: translate(-2000px);
+  transform: translate(-50%, -50%) scaleY(2);
+  opacity: 0;
   animation-name: appear;
   animation-duration: 5500ms;
   animation-fill-mode: forwards;
@@ -622,15 +623,11 @@ img {
 
 
 @keyframes appear {
-  0% {
-    transform: translate(-2000px);
-    opacity: 0;
-  }
-  95%{
+  0%{
     transform: translate(-50%, -50%) scaleY(2);
     opacity: 0;
   }
-  95%{
+  91%{
     transform: translate(-50%, -50%) scaleY(2);
     opacity: 0;
   }
