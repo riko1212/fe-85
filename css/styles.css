@@ -39,18 +39,6 @@ img {
   display: block;
 }
 
-@keyframes appear {
-  0% {
-    transform: translate(-2000px);
-    /* opacity: 0; */
-  }
-
-  100% {
-    /* opacity: 1; */
-    transform: translate(0px);
-  }
-}
-
 .link {
   text-decoration: none;
 }
@@ -604,9 +592,13 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scaleY(1);
-  transition: transform 300ms linear;
+  /* transform: translate(-50%, -50%) scaleY(1); */
+  /* transition: transform 300ms linear; */
   padding: 30px;
+  transform: translate(-2000px);
+  animation-name: appear;
+  animation-duration: 5500ms;
+  animation-fill-mode: forwards;
 }
 
 .backdrop.is-hidden .modal {
@@ -626,4 +618,24 @@ img {
 
 .no-scroll {
   overflow: hidden;
+}
+
+
+@keyframes appear {
+  0% {
+    transform: translate(-2000px);
+    opacity: 0;
+  }
+  95%{
+    transform: translate(-50%, -50%) scaleY(2);
+    opacity: 0;
+  }
+  95%{
+    transform: translate(-50%, -50%) scaleY(2);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scaleY(1);
+  }
 }
