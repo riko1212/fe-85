@@ -420,9 +420,71 @@
         </li>
       </ul>
     </footer>
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop" data-modal>
       <div class="modal">
         <button class="modal-close" data-modal-close type="button">X</button>
+        <p class="modal-title" title="Modal title">Modal title</p>
+        <form class="modal-form">
+          <label
+            ><span class="modal-label-text">Enter your name*</span>
+            <input
+              class="modal-input"
+              name="user-name"
+              type="text"
+              placeholder="John"
+              required
+            />
+          </label>
+          <div class="modal-field">
+            <label class="modal-label-text" for="user-phone"
+              >Enter your phone*</label
+            >
+            <div class="input-wrap">
+              <input
+                class="modal-input"
+                id="user-phone"
+                name="user-phone"
+                type="tel"
+                title="+380 (00) 000-00-00"
+                placeholder="+380 (00) 000-00-00"
+                required
+              />
+              <svg class="modal-input-icon" width="20" height="20">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </div>
+          </div>
+          <p class="error">error</p>
+          <input
+            class="modal-input"
+            name="user-email"
+            type="email"
+            placeholder="Enter your email"
+          />
+          <p class="error">error</p>
+          <div class="modal-field">
+            <label class="modal-label-text" for="user-comment"
+              >Enter your comment*</label
+            >
+            <textarea
+              class="modal-textarea"
+              id="user-comment"
+              name="user-comment"
+              placeholder="Comment"
+            ></textarea>
+          </div>
+          <div class="modal-field">
+            <label class="modal-label-text" for="user-city"
+              >Enter your city*</label
+            >
+            <select id="user-city" name="user-city" class="modal-input">
+              <option value="london">London</option>
+              <option value="paris">Paris</option>
+              <option value="novyi-rozdil">Novyi Rozdil</option>
+            </select>
+          </div>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
