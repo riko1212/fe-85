@@ -9,6 +9,8 @@
     el.addEventListener('click', toggleModal);
   });
 
+  setTimeout(toggleModal, 5000);
+
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
   function toggleModal() {
