@@ -380,32 +380,79 @@
           </ul>
         </div>
       </section>
-      <section>
-        <h2>Online-booking</h2>
-      </section>
-      <section>
-        <h2>Contacts</h2>
-        <address>
-          <ul>
-            <li>
-              <a
-                href="https://goo.gl/maps/MDbwEySfDPEgmYsLA"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-              >
-                st. Vasilkivska, 7A<br />
-                Kyiv, 08132
-              </a>
-            </li>
-            <li><a href="tel:+380441111111">+38 044 111 11 11</a></li>
-            <li>
-              <a href="mailto:barbershop@email.com">barbershop@email.com</a>
-            </li>
-          </ul>
-        </address>
-        <h3>Working hours</h3>
-        <p>Every day from 9:00 to 22:00</p>
-      </section>
+      <div class="contact-wrap">
+        <div class="container">
+          <section class="online">
+            <h2 class="online-title title">Online-booking</h2>
+            <form class="online-form">
+              <div class="online-field">
+                <input
+                  class="online-input online-item"
+                  id="online-name"
+                  name="online-name"
+                  type="text"
+                  required
+                  placeholder=" "
+                />
+                <label class="online-label" for="online-name">Name*</label>
+              </div>
+              <div class="online-field">
+                <input
+                  class="online-input online-item"
+                  id="online-tel"
+                  name="online-tel"
+                  type="tel"
+                  required
+                  placeholder=" "
+                />
+                <label class="online-label" for="online-tel">Phone*</label>
+              </div>
+              <div class="online-field online-field-text">
+                <textarea
+                  class="online-textarea online-item"
+                  id="online-message"
+                  name="online-message"
+                  placeholder=" "
+                ></textarea>
+                <label class="online-label" for="online-message">Message</label>
+              </div>
+              <button class="btn online-btn" type="submit">Send</button>
+            </form>
+          </section>
+          <section class="contacts">
+            <h2 class="contacts-title title">Contacts</h2>
+            <address class="contacts-address">
+              <ul class="contacts-list list">
+                <li class="contacts-item">
+                  <a
+                    class="contacts-link link"
+                    href="https://goo.gl/maps/MDbwEySfDPEgmYsLA"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                  >
+                    st. Vasilkivska, 7A<br />
+                    Kyiv, 08132
+                  </a>
+                </li>
+                <li class="contacts-item">
+                  <a class="contacts-link link" href="tel:+380441111111"
+                    >+38 044 111 11 11</a
+                  >
+                </li>
+                <li class="contacts-item">
+                  <a
+                    class="contacts-link link"
+                    href="mailto:barbershop@email.com"
+                    >barbershop@email.com</a
+                  >
+                </li>
+              </ul>
+            </address>
+            <h3 class="contacts-subtitle">Working hours</h3>
+            <p class="contacts-text">Every day from 9:00 to 22:00</p>
+          </section>
+        </div>
+      </div>
     </main>
     <footer>
       <p>&copy;Copyright 2020</p>
@@ -420,7 +467,7 @@
         </li>
       </ul>
     </footer>
-    <div class="backdrop" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-close" data-modal-close type="button">X</button>
         <p class="modal-title" title="Modal title">Modal title</p>
@@ -474,15 +521,23 @@
             ></textarea>
           </div>
           <div class="modal-field">
-            <label class="modal-label-text" for="user-city"
-              >Enter your city*</label
+            <input
+              class="modal-check visually-hidden"
+              id="privacy"
+              name="user-privacy"
+              type="checkbox"
+              value="true"
+            />
+            <label class="check-text" for="privacy">
+              <span>
+                <svg class="check-icon" width="10" height="8">
+                  <use href="./images/icons.svg#icon-check"></use>
+                </svg>
+              </span>
+              Згоден з <a href="">політикою приватності</a></label
             >
-            <select id="user-city" name="user-city" class="modal-input">
-              <option value="london">London</option>
-              <option value="paris">Paris</option>
-              <option value="novyi-rozdil">Novyi Rozdil</option>
-            </select>
           </div>
+
           <button type="submit">Send</button>
         </form>
       </div>
