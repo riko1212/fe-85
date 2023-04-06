@@ -18,6 +18,70 @@
     padding-bottom: 100px;
   }
 
+  .bottom-text {
+    font-size: 18px;
+    line-height: 1.67;
+  }
+
+  .hero {
+    background-image: unset;
+    background-color: unset;
+  }
+
+  .hero-soc {
+    width: 116px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 27px;
+    padding-bottom: 40px;
+  }
+  .hero-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    transform: rotate(-90deg) translateY(100%);
+    transform-origin: bottom left;
+  }
+
+  .hero-list::before {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: #303030;
+  }
+
+  .hero-link {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.2em;
+    color: #303030;
+  }
+
+  .hero-link:is(:hover, :focus) {
+    color: #ff6c00;
+  }
+
+  .hero-wrap {
+    background-image: var(--grad), url(../images/hero-bg-tab.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 270px 100px 237px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-wrap {
+      background-image: var(--grad), url(../images/hero-bg-tab-2x.jpeg);
+    }
+  }
+
+  .hero-bottom-text {
+    max-width: 360px;
+  }
+
   .gallery-top-text {
     margin-bottom: 44px;
   }
@@ -42,6 +106,58 @@
   .section {
     padding-top: 120px;
     padding-bottom: 120px;
+  }
+
+  .header-list {
+    display: flex;
+    gap: 30px;
+  }
+
+  .header-link {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    transition: color 300ms linear;
+  }
+
+  .header-link:is(:hover, :focus) {
+    color: #ff6c00;
+  }
+
+  .header-tel {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-right: 43px;
+  }
+
+  .header-btn {
+    display: block;
+    color: var(--main-btn-color);
+  }
+
+  .hero-wrap {
+    background-image: var(--grad), url(../images/hero-bg.jpeg);
+    padding-bottom: 210px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-wrap {
+      background-image: var(--grad), url(../images/hero-bg-2x.jpeg);
+    }
+  }
+
+  .hero-title {
+    font-size: 72px;
+    line-height: 1.18;
   }
 
   .barbers-item {

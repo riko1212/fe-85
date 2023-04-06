@@ -130,8 +130,8 @@ img {
 }
 
 .bottom-text {
-  font-size: 18px;
-  line-height: 1.67;
+  font-size: 16px;
+  line-height: 1.62;
   letter-spacing: 0.02em;
 }
 
@@ -156,6 +156,24 @@ img {
 
 .header-logo {
   margin-right: 131px;
+  background-color: #ffffff;
+}
+
+.header-list,
+.header-tel,
+.header-btn {
+  display: none;
+}
+
+.menu-open-btn {
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+}
+
+.menu-open-icon {
+  fill: #ffffff;
 }
 
 .header-nav {
@@ -164,40 +182,87 @@ img {
   margin-right: auto;
 }
 
-.header-list {
+.mob-menu {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 48px 30px 48px 40px;
   display: flex;
-  gap: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+}
+.menu-close-btn {
+  background-color: transparent;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-bottom: 30px;
 }
 
-.header-link {
+.mob-menu-list {
+  margin-bottom: 64px;
+}
+
+.mob-menu-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.mob-menu-link {
   font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
+  font-size: 18px;
+  line-height: calc(25 / 18);
   letter-spacing: 0.1em;
-  color: #ffffff;
-  transition: color 300ms linear;
+
+  color: #303030;
 }
 
-.header-link:is(:hover, :focus) {
-  color: #ff6c00;
-}
-
-.header-tel {
+.mob-menu-tel {
   font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
+  font-size: 18px;
+  line-height: calc(25 / 18);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffffff;
-  margin-right: 43px;
+
+  color: #303030;
+}
+.mob-menu-btn {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 64px;
 }
 
-.header-btn {
-  color: var(--main-btn-color);
+.mob-soc-item:not(:last-child) {
+  margin-bottom: 24px;
 }
+.mob-soc-link {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: calc(19 / 14);
+  letter-spacing: 0.2em;
+
+  color: #303030;
+}
+
 /**------------- HERO ---------------*/
 
 .hero {
+  background-color: #7b7575;
+  background-image: var(--grad), url(../images/hero-bg-mob.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: var(--grad), url(../images/hero-bg-mob-2x.jpeg);
+  }
 }
 
 .hero-container {
@@ -205,50 +270,18 @@ img {
 }
 
 .hero-wrap {
-  background-color: #7b7575;
-  background-image: var(--grad), url(../images/hero-bg.jpeg);
-  background-repeat: no-repeat;
+  /* background-image: var(--grad), url(../images/hero-bg.jpeg); */
+  /* background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
   flex-grow: 1;
-  padding: 272px 100px 208px;
+  padding: 210px 0px;
 }
 
 .hero-soc {
-  width: 100px;
-  display: flex;
-  align-items: flex-end;
-  padding-left: 27px;
-  padding-bottom: 40px;
-}
-.hero-list {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  transform: rotate(-90deg) translateY(100%);
-  transform-origin: bottom left;
+  display: none;
 }
 
-.hero-list::before {
-  content: '';
-  width: 60px;
-  height: 1px;
-  background-color: #303030;
-}
-.hero-item {
-}
-
-.hero-link {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 1.36;
-  letter-spacing: 0.2em;
-  color: #303030;
-}
-
-.hero-link:is(:hover, :focus) {
-  color: #ff6c00;
-}
 .hero-top-text {
   color: rgba(157, 164, 189, 0.6);
   margin-bottom: 20px;
@@ -256,8 +289,8 @@ img {
 
 .hero-title {
   font-family: 'Raleway', sans-serif;
-  font-size: 72px;
-  line-height: 1.18;
+  font-size: 48px;
+  line-height: calc(56 / 48);
   letter-spacing: 0.05em;
   color: var(--main-title-color);
   margin-bottom: 20px;
@@ -265,7 +298,7 @@ img {
   align-items: baseline;
 }
 
-.hero-title::before {
+/* .hero-title::before {
   content: '';
   font-size: 50px;
   width: 40px;
@@ -278,14 +311,14 @@ img {
 .hero-title::after {
   content: '';
   color: tomato;
-}
+} */
 .hero-title:hover::before {
   color: chartreuse;
 }
 
 .hero-bottom-text {
   color: #9da4bd;
-  max-width: 360px;
+  max-width: 320px;
 }
 
 /**------------- ABOUT ---------------*/
